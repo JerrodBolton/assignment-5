@@ -1,1 +1,3 @@
-# assignment-5
+# CSC235 - Python Programming I  
+
+Welcome to CSC235, an introductory course designed to provide a comprehensive foundation in Python programming. This course covers essential topics such as Python syntax, basic data structures, and Integrated Development Environment (IDE) usage. Beyond the basics, you will explore object-oriented programming, debugging techniques, and leveraging Python libraries. By the end of this course, you will have the skills to write, debug, and execute Python code, utilize control structures, create reusable functions and modules, and apply your knowledge to solve real-world problems through practical projects.  
