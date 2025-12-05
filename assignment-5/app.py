@@ -62,8 +62,7 @@ def added_course():
         else:
             print("Invalid course number. Please try again.")
         
-        display_options()
-    
+    display_options()
     return registered_courses
 
 def remover_course():
@@ -79,6 +78,7 @@ def remover_course():
             print("============================================================================")
         else:
             print("Invalid course number. Please try again.")    
+    
     display_options()
     return registered_courses
 
@@ -123,5 +123,5 @@ print("        Hey, Welcome to", college_name[0])
 print("        Located in:", college_name[1], "Address:", college_name[2])
 print("============================================================================")
 print(".       Now let's get you set up for your classes this semester!            ")
-
+# This is calling the display options function to start the program.
 display_options()
