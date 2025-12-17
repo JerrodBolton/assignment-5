@@ -8,3 +8,9 @@ Workout Data:Generated Workout: 2025-12-16 20:49:11
 - Wall Sit - Hold for 30 seconds, 3 times
 - Squats - 3 sets of 15 reps
 
+Workout Data:
+Generated Workout: 2025-12-16 21:15:09
+- Calf Raises - 3 sets of 20 reps
+- Squats - 3 sets of 15 reps
+- Wall Sit - Hold for 30 seconds, 3 times
+
