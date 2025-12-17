@@ -1,6 +1,3 @@
-
-
-
 #  This is a simple Tkinter GUI application that displays "Hello World!" and has a button to quit the application.
 # ------------------------------------------------------------------------------------
 # from tkinter import *

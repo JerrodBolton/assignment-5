@@ -32,5 +32,3 @@ In this assignment, we will learn how to create a Graphical User Interface (GUI)
 ## Notes
 - Be creative and have fun with your project!
 - Remember, the theme you choose should guide the design and functionality of your app.
-
-Good luck!
