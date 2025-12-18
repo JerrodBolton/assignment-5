@@ -32,3 +32,33 @@ Generated Workout: 2025-12-16 21:39:53
 - Plank - Hold for 1 minute, 3 times
 - Leg Raises - 3 sets of 15 reps
 
+Workout Data:
+Generated Workout: 2025-12-17 19:30:18
+- Russian Twists - 3 sets of 20 reps
+- Crunches - 3 sets of 20 reps
+- Sit-Ups - 3 sets of 15 reps
+
+Workout Data:
+Generated Workout: 2025-12-17 19:30:18
+- Flutter Kicks - 3 sets of 20 reps
+- Plank - Hold for 1 minute, 3 times
+- Sit-Ups - 3 sets of 15 reps
+
+Workout Data:
+Generated Workout: 2025-12-17 19:30:18
+- Reverse Lunges - 3 sets of 10 reps each leg
+- High Knees - 3 sets of 30 seconds
+- Calf Raises - 3 sets of 20 reps
+
+Workout Data:
+Generated Workout: 2025-12-17 19:43:00
+- Burpees - 3 sets of 8 reps
+- High Knees - 3 sets of 30 seconds
+- Mountain Climbers - 3 sets of 30 seconds
+
+Workout Data:
+Generated Workout: 2025-12-17 19:43:00
+- Knee Push-ups - 3 sets of 10 reps
+- Incline Push-ups - 3 sets of 12 reps
+- Lateral Raises - 3 sets of 12 reps
+

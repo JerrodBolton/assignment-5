@@ -144,17 +144,12 @@ class WorkoutApp:
         self.workout_program = []  # Initialize an empty list to store the workout program
         self.workout_time = get_time_and_date()  # Get the current time and date
         self.workout_display.pack(pady=20)  # Add padding around the text box
+        self.save_button = None  # Initialize the save button as None
+        self.timer_label = ttk.Label(self.root, text="")
+        self.timer_label.pack(pady=5)
 
         # Create the GUI components
         self.create_widgets()  # Call the method to create widgets
-
-    # Method to generate and display the workout
-    def generate_workout(self):
-        workout_type = self.workout_type.get()  # Get the selected workout type from the dropdown
-        self.workout_program = get_a_random_workout_program(workout_type)  # Generate a random workout program
-        self.display_workout()  # Display the generated workout
-        # input_user_data()  # Call the function to input user data
-        self.save_button_appear()  # Show the save button after a delay
 
     # Method to display the generated workout
     def display_workout(self):
@@ -171,19 +166,71 @@ class WorkoutApp:
             for exercise in self.workout_program:  # Loop through the workout program
                 file.write(f"- {exercise}\n")  # Write each exercise
             file.write("\n") # Add a newline
-        print("-----------------------------")  # Print a separator
+        print("---------------------------------------------------------------------------------------")  # Print a separator
         print("Workout data saved successfully.")  # Print a success message
         print(f"Hey {input_name}, your workout data saved to workout_data.txt at: {self.workout_time}")  # Print a confirmation message
-        print("-----------------------------")  # Print a separator
+        print("---------------------------------------------------------------------------------------")  # Print a separator
         
 
-    # Method to show the save button after a delay
+     # Method to show the save button after a delay
+    # def save_button_appear(self):
+    #     def show_save_button():
+    #         save_button = ttk.Button(self.root, text="Save Workout", command=self.save_workout_data)  # Create the save button
+    #         save_button.pack(pady=10)  # Add padding around the button
+    #     def hide_save_button_forget():
+    #         hide_save_button.pack_forget()  # Hide the save button
+
+    #     def hide_save_button():
+    #     hide_save_button = ttk.Button(self.root, text="Save Workout", command=hide_save_button())  # Create the save button
+    #     hide_save_button.pack(pady=10)  # Add padding around the button
+
+         # self.root.after(100000, show_save_button)  # Show the save button after 1 second
+         # self.root.after(190000, hide_save_button)  # Hide the save button after 1.9 seconds
+    #     self.root.after(1000, show_save_button)  # Show the save button after 1 second
+    #     self.root.after(1900, hide_save_button)  # Hide the save button after 1.9 seconds
+
     def save_button_appear(self):
         def show_save_button():
-            save_button = ttk.Button(self.root, text="Save Workout", command=self.save_workout_data)  # Create the save button
-            save_button.pack(pady=10)  # Add padding around the button
+            self.save_button = ttk.Button(
+                self.root,
+                text="Save Workout",
+                command=self.save_workout_data
+            )
+            self.save_button.pack(pady=10)
 
-        self.root.after(100000, show_save_button)  # Show the save button after 1 second
+            # Schedule the button to disappear after 10 seconds
+            self.root.after(10000, hide_save_button)
+
+        def hide_save_button():
+            if self.save_button:
+                self.save_button.destroy()
+                self.save_button = None
+                    
+    # Show the save button after 30 seconds
+        self.root.after(45000, show_save_button)
+
+    # def countdown(self):
+    #         if self.timer > 0:
+    #             mins, secs = divmod(self.timer, 60)
+    #             time_format = f"{mins:02d}:{secs:02d}"
+    #             self.timer_label.config(
+    #                 text=f"Time remaining to save workout: {time_format}"
+    #             )
+    #             self.timer -= 1
+    #             self.root.after(1000, self.countdown)  # call again in 1 second
+    #         else:
+    #             self.timer_label.config(text="Time is up!")
+
+    # Method to generate and display the workout
+    def generate_workout(self):
+        workout_type = self.workout_type.get()  # Get the selected workout type from the dropdown
+        self.workout_program = get_a_random_workout_program(workout_type)  # Generate a random workout program
+        self.display_workout()  # Display the generated workout
+        self.timer = 30  # countdown time in seconds
+        # input_user_data()  # Call the function to input user data
+        # self.countdown()  # Start the countdown timer
+        self.save_button_appear()  # Show the save button after a delay
+    
 
     # Method to create GUI components
     def create_widgets(self):
@@ -215,10 +262,11 @@ class WorkoutApp:
         # Create a dropdown menu for workout types
         self.workout_type = tk.StringVar()  # Create a StringVar to hold the selected workout type
         workout_options = [
-    "Arm", "Legs", "Core",
-    "Cardio", "Full Body",
-    "HIIT", "Mobility", "Recovery"
-]  # Define the workout options
+        "Arm", "Legs", "Core",
+        "Cardio", "Full Body",
+        "HIIT", "Mobility", "Recovery"
+        ]  
+        # Define the workout options
         self.workout_dropdown = ttk.Combobox(selection_frame, textvariable=self.workout_type, values=workout_options, state="readonly")  # Create the dropdown
         self.workout_dropdown.pack()  # Add the dropdown to the frame
         self.workout_dropdown.current(0)  # Set the default selection to the first option
